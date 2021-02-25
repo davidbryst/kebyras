@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kebyras/constantes.dart';
 
-class KebyrasButton extends StatelessWidget {
-  const KebyrasButton(
-      {Key key, this.textButton, this.press, this.styleBorder, this.textStyle})
-      : super(key: key);
-  final String textButton;
-  final TextStyle textStyle;
+class KebyrasNavigator extends StatelessWidget {
+  const KebyrasNavigator({Key key, this.press}) : super(key: key);
   final Function press;
-  final Border styleBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +13,15 @@ class KebyrasButton extends StatelessWidget {
       child: FlatButton(
         onPressed: this.press,
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 40.0),
+          padding: EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-            border: this.styleBorder,
             borderRadius: BorderRadius.all(Radius.circular(50.0)),
             color: text_white,
             boxShadow: [
               kebyrasBoxShadow,
             ],
           ),
-          child: Text("${this.textButton}", style: this.textStyle),
+          child: Icon(FontAwesomeIcons.bars, color: color_interactive['first']),
         ),
       ),
     );

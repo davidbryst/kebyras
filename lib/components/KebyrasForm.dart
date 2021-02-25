@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kebyras/components/KebyrasNavgator.dart';
+/*
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kebyras/components/KebyrasButton.dart';
 import 'package:kebyras/components/KebyrasCard.dart';
@@ -8,7 +10,7 @@ import 'package:kebyras/components/KebyrasFormElement.dart';
 import 'package:kebyras/components/KebyrasFormRadio.dart';
 import 'package:kebyras/components/KebyrasFormSection.dart';
 import 'package:kebyras/components/KebyrasTextFormField.dart';
-import 'package:kebyras/constantes.dart';
+import 'package:kebyras/constantes.dart';*/
 
 class MyFrom extends StatefulWidget {
   MyFrom({Key key}) : super(key: key);
@@ -28,21 +30,7 @@ class _MyFromState extends State<MyFrom> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // not good style of input
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-                if (_formKey.currentState.validate()) {
-                  // Process data.
-                }
-              },
-              child: Text('Submit'),
-            ),
-          ),
-
+          /*
           KebyrasFormSection(
             children: [
               KebyrasTextFormField(
@@ -123,21 +111,17 @@ class _MyFromState extends State<MyFrom> {
           ),
           KebyrasCard(
               textCard: "Dette", montant: -500000.0, textStyle: detteTextStyle),
-
           KebyrasButton(
             styleBorder:
                 Border.all(color: color_interactive['first'], width: 2.0),
-            child: Text("Reset", style: buttonTextStyle),
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 40.0),
+            textButton: 'Reset',
+            textStyle: buttonTextStyle,
           ),
           KebyrasButton(
-            child: Text("Reset", style: defaultButtonTextStyle),
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 40.0),
-          ),
-          KebyrasButton(
-            child: Icon(FontAwesomeIcons.bars),
-            padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
-          ),
+            textButton: "Reset",
+            textStyle: defaultButtonTextStyle,
+          ),*/
+          KebyrasNavigator(),
         ],
       ),
     );

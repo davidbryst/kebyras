@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kebyras/components/KebyrasForm.dart';
 import 'package:kebyras/constantes.dart';
 import 'package:kebyras/theme.dart';
 
@@ -33,7 +34,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
           child: Container(
         padding: EdgeInsets.all(30),
-        child: KebyrasInputDatePickerFormField(),
+        child: MyFrom(),
       )),
     );
   }
