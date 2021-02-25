@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kebyras/constantes.dart';
+import 'package:kebyras/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,58 +12,54 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: theme(),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(this.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+          child: Container(
+        padding: EdgeInsets.all(30),
+        child: KebyrasInputDatePickerFormField(),
+      )),
+    );
+  }
+}
+
+/// This is the stateful widget that the main application instantiates.
+
+class KebyrasInputDatePickerFormField extends StatelessWidget {
+  KebyrasInputDatePickerFormField({Key key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: text_black,
+            offset: Offset(0, 0),
+            blurRadius: 9,
+            spreadRadius: 0,
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      child: InputDatePickerFormField(
+        lastDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        initialDate: DateTime.now(),
       ),
     );
   }

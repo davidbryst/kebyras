@@ -1,0 +1,1 @@
+enum SingingCharacter { lafayette, jefferson }
