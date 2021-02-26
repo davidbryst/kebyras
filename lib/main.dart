@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kebyras/components/KebyrasForm.dart';
+import 'package:kebyras/components/Kebygraphique.dart';
 import 'package:kebyras/constantes.dart';
 import 'package:kebyras/theme.dart';
 
@@ -14,28 +14,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme(),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(this.title),
+      body: Container(
+        child: KebyrasGraphique(),
       ),
-      body: Center(
-          child: Container(
-        padding: EdgeInsets.all(30),
-        child: MyFrom(),
-      )),
     );
   }
 }

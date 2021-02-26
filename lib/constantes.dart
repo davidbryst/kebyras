@@ -75,3 +75,9 @@ const defaultButtonTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 20.0,
 );
+
+// funtion
+
+/*
+x = x0 + r*cos(t)
+y = y0 + r*sin(t)*/
